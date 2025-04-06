@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cargo Stowage 3D</title>
+        <link rel="stylesheet" href="/static/style.css">
+            <script src="/static/js/three.js"></script>
+                <script src="/static/js/OrbitControls.js"></script>
+                </head>
+                <body>
+                    <div id="3d-container"></div>
+                        <script>
+                                // Initialize 3D Scene
+                                        const scene = new THREE.Scene();
+                                                const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+                                                        const renderer = new THREE.WebGLRenderer();
+                                                                renderer.setSize(800, 600);
+                                                                        document.getElementById("3d-container").appendChild(renderer.domElement);
+
+                                                                                // Example: Render a container
+                                                                                        const geometry = new THREE.BoxGeometry(4, 3, 2);
+                                                                                                const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+                                                                                                        const container = new THREE.Mesh(geometry, material);
+                                                                                                                scene.add(container);
+
+                                                                                                                        // Animation loop
+                                                                                                                                function animate() {
+                                                                                                                                            requestAnimationFrame(animate);
+                                                                                                                                                        renderer.render(scene, camera);
+                                                                                                                                                                }
+                                                                                                                                                                        animate();
+                                                                                                                                                                            </script>
+                                                                                                                                                                            </body>
+                                                                                                                                                                            </html>

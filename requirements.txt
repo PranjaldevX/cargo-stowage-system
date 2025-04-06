@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+sqlite3
+python-multipart
+Jinja2
+numpy
